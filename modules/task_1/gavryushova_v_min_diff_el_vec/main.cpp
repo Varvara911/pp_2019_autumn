@@ -1,5 +1,4 @@
-// Copyright 2019 Gavryushova Varvara
-
+//  Copyright 2019 Gavryushova Varvara
 
 #include <gtest-mpi-listener.hpp>
 #include <gtest/gtest.h>
@@ -16,7 +15,6 @@ TEST(min_diff_el_vec, can_find_the_right_answer) {
     vector = getRandomVector(5);
   }
 
-  
   double tmp = ParallelFind(vector);
 
   if (rank == 0) {
