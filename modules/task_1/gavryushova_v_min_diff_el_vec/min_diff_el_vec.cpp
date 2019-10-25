@@ -32,7 +32,7 @@ int LineFind(std::vector<int> vec) {
 }
 
 int ParallelFind(std::vector<int> vec) {
-	if (vec.size() - 1 < 2) {
+  if (vec.size() - 1 < 2) {
     throw("small size of vector");
   }
 
@@ -57,7 +57,7 @@ int ParallelFind(std::vector<int> vec) {
   if (rank == 0) {
     mpi_vector = std::vector<int>(vec.begin(), vec.begin() + rec + count + 1);
   }
-  else {
+  if (rank != 0) {
     MPI_Status status;
     MPI_Recv(&mpi_vector[0], count + 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
   }
