@@ -4,7 +4,7 @@
 #include <cmath>
 #include <vector>
 #include <random>
-#include "gavryushova_v_min_diff_el_vec.h"
+#include "../../../modules/task_1/gavryushova_v_min_diff_el_vec/min_diff_el_vec.h"
 #include "./mpi.h"
 
 std::vector<int> getRandomVector(int n) { //  создание случайного вектора
