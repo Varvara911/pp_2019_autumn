@@ -5,7 +5,6 @@
 #include <gtest/gtest.h>
 #include <vector>
 #include <iostream>
-#include "gavryushova_v_min_diff_el_vec.h"
 #include "../../../modules/task_1/gavryushova_v_min_diff_el_vec/min_diff_el_vec.h"
 
 TEST(min_diff_el_vec, can_find_the_right_answer) {
