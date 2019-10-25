@@ -13,13 +13,14 @@ TEST(min_diff_el_vec, can_find_the_right_answer) {
   std::vector<int> vector(5);
 
   if (rank == 0) {
-	vector = getRandomVector(5);
+    vector = getRandomVector(5);
   }
 
+  
   double tmp = ParallelFind(vector);
 
   if (rank == 0) {
-	ASSERT_EQ((vector), tmp);
+    ASSERT_EQ((vector), tmp);
   }
 }
 
@@ -29,13 +30,13 @@ TEST(min_diff_el_vec, can_find_the_right_answer_with_small_vector) {
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
   if (rank == 0) {
-	vector = getRandomVector(3);
+    vector = getRandomVector(3);
   }
 
   double tmp = ParallelFind(vector);
 
   if (rank == 0) {
-	ASSERT_EQ(ParallelFind(vector), tmp);
+    ASSERT_EQ(ParallelFind(vector), tmp);
   }
 }
 
@@ -45,13 +46,13 @@ TEST(min_diff_el_vec, can_find_the_right_answer_with_big_vector) {
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
   if (rank == 0) {
-	vector = getRandomVector(100);
+    vector = getRandomVector(100);
   }
 
   double tmp = ParallelFind(vector);
 
   if (rank == 0) {
-	ASSERT_EQ(ParallelFind(vector), tmp);
+    ASSERT_EQ(ParallelFind(vector), tmp);
   }
 }
 
@@ -62,13 +63,13 @@ TEST(min_diff_el_vec, can_find_the_answer_with_very_big_vector) {
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
   if (rank == 0) {
-	vector = getRandomVector(1000);
+    vector = getRandomVector(1000);
   }
 
   double tmp = ParallelFind(vector);
 
   if (rank == 0) {
-	ASSERT_EQ(ParallelFind(vector), tmp);
+    ASSERT_EQ(ParallelFind(vector), tmp);
   }
 }
 
@@ -78,13 +79,13 @@ TEST(min_diff_el_vec, can_find_the_right_answer_with_even_number_elements_vector
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
   if (rank == 0) {
- 	vector = getRandomVector(7);
+     vector = getRandomVector(7);
   }
 
   double res = ParallelFind(vector);
 
   if (rank == 0) {
-	ASSERT_EQ(ParallelFind(vector), res);
+    ASSERT_EQ(ParallelFind(vector), res);
   }
 }
 
