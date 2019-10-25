@@ -7,7 +7,7 @@
 #include "gavryushova_v_min_diff_el_vec.h"
 #include "./mpi.h"
 
-std::vector<int> getRandomVector(int n) { //создание случайного вектора
+std::vector<int> getRandomVector(int n) { //  создание случайного вектора
   std::mt19937 random;
 
   std::vector<int> vector;
@@ -16,24 +16,24 @@ std::vector<int> getRandomVector(int n) { //создание случайного вектора
   return vector;
 }
 
-int LineFind(std::vector<int> vec) {// линейный поиск
-  if (vec.size() - 1 < 2) {// проверка вектора на подходящий размер(слишком маленький)
+int LineFind(std::vector<int> vec) {  // линейный поиск
+  if (vec.size() - 1 < 2) {  // проверка вектора на подходящий размер(слишком маленький)
 	throw("the vector is small");
   }
 
   int min = 0; // минимальная разница
   int i;
   for (unsigned int k; k < vec.size(); k++) {
-	if (abs(vec[k] - vec[k + 1]) < min) {// если разница между элементами меньше min
-      min = abs(vec[k] - vec[k + 1]);// то записываем новый min
+	if (abs(vec[k] - vec[k + 1]) < min) { // если разница между элементами меньше min
+      min = abs(vec[k] - vec[k + 1]);  // то записываем новый min
 	}
   }
 
   return min;
 }
 
-int ParallelFind(std::vector<int> vec) {//параллельный поиск
-  if (vec.size() - 1 < 2) {// проверка требований размера(слишком маленький)
+int ParallelFind(std::vector<int> vec) {  //параллельный поиск
+  if (vec.size() - 1 < 2) {  // проверка требований размера(слишком маленький)
 	throw("small size of vector");
   }
 
@@ -66,7 +66,7 @@ int ParallelFind(std::vector<int> vec) {//параллельный поиск
   int minimum = 0, mpi_min = 0;
 
   if (rank < vec.size() - 1) {
-	for (unsigned int i = 0; i < mpi_vector.size() - 1; i++) {//проход по локальному вектору
+	for (unsigned int i = 0; i < mpi_vector.size() - 1; i++) {  //проход по локальному вектору
 	  if (abs(mpi_vector[i] - mpi_vector[i + 1]) < mpi_min) {
 		mpi_min = abs(mpi_vector[i] - mpi_vector[i + 1]);
 	  }
