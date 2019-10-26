@@ -13,12 +13,13 @@ TEST(min_diff_el_vec, can_find_the_right_answer) {
 
   if (rank == 0) {
     vector = getRandomVector(5);
+
   }
 
   double tmp = ParallelFind(vector);
 
   if (rank == 0) {
-    ASSERT_EQ((vector), tmp);
+    ASSERT_EQ(LineFind(vector), tmp);
   }
 }
 
