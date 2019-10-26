@@ -22,7 +22,7 @@ int LineFind(std::vector<int> vec) {
   }
 
   int min = 0;
-  for (unsigned int k; k < vec.size(); k++) {
+  for (unsigned int k = 0; k < vec.size(); k++) {
     if (abs(vec[k] - vec[k + 1]) < min) {
       min = abs(vec[k] - vec[k + 1]);
     }
