@@ -64,7 +64,7 @@ int ParallelFind(std::vector<int> vec) {
 
   int minimum = 0, mpi_min = 0;
 
-  if (rank < vec.size() - 1) {
+  if ((unsigned int)rank < vec.size() - 1) {
     for (unsigned int i = 0; i < mpi_vector.size() - 1; i++) {
       if (abs(mpi_vector[i] - mpi_vector[i + 1]) < mpi_min) {
         mpi_min = abs(mpi_vector[i] - mpi_vector[i + 1]);
