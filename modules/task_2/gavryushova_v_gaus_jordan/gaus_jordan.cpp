@@ -106,8 +106,7 @@ std::vector<double> Matrix::getParallelMetod(const std::vector<double>& coefVec)
       for (int k = 0; k < n; ++k) {
         if (k == i) {
           a[j * n + k] = a[j * n + k] / tmp;
-        }
-        else {
+        }else {
           a[j * n + k] = a[j * n + k] - round((scaling * recvVec[k] / tmp) * 100000.0) / 100000.0;
         }
       }
@@ -117,8 +116,7 @@ std::vector<double> Matrix::getParallelMetod(const std::vector<double>& coefVec)
       for (int k = 0; k < n; ++k) {
         if (k == i) {
           x[k] = x[k] / tmp;
-        }
-        else {
+        }else {
           x[k] = x[k] - round((scaling * recvVec[k] / tmp) * 100000.0) / 100000.0;
         }
       }
