@@ -22,8 +22,8 @@ TEST(gaus_jordan, calculate_matrix_correct_using_line_method) {
 TEST(gaus_jordan, calculate_matrix_correct_using_parallel_method) {
   int rank;
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  std::vector<std::vector<double>> vector{ {1, 1, 1}, {2, 3, 2}, {3, 5, 7} };
-  Matrix matrix(vector);
+  std::vector<std::vector<double>> vect{ {1, 1, 1}, {2, 3, 2}, {3, 5, 7} };
+  Matrix matrix(vect);
   std::vector<double> res(matrix.getMatrixSize());
   res = matrix.getParallelMetod({ 1, 1, 1 });
   if (rank == 0) {
@@ -39,8 +39,8 @@ TEST(gaus_jordan, throw_if_matrix_size_less_then_process_count) {
 }
 
 TEST(gaus_jordan, throw_if_matrix_size_not_equal_result_vector_size) {
-  std::vector<std::vector<double>> vector{ {1, 1, 1}, {2, 3, 2}, {3, 5, 7} };
-  Matrix matrix(vector);
+  std::vector<std::vector<double>> vect{ {1, 1, 1}, {2, 3, 2}, {3, 5, 7} };
+  Matrix matrix(vect);
   std::vector<double> res(matrix.getMatrixSize());
   ASSERT_ANY_THROW(matrix.getParallelMetod({ 1, 1, 1, 1 }));
 }
@@ -48,9 +48,9 @@ TEST(gaus_jordan, throw_if_matrix_size_not_equal_result_vector_size) {
 TEST(gauss_method, can_calculate_matrix_with_size_in_4_elements) {
   int rank;
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  std::vector<std::vector<double>> vector{ { 3, 3, 6, 3 }, { 3, 1, 5, 1 }, { 2, 1, 4, 2 },
+  std::vector<std::vector<double>> vect{ { 3, 3, 6, 3 }, { 3, 1, 5, 1 }, { 2, 1, 4, 2 },
     { 1, 3, 3, 2 } };
-  Matrix matrix(vector);
+  Matrix matrix(vect);
   std::vector<double> res(matrix.getMatrixSize());
   res = matrix.getParallelMetod({ 6, 2, 1, 6});
   if (rank == 0) {
