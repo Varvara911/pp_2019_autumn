@@ -1,7 +1,6 @@
 // Copyright 2019 Gavryushova Varvara
-#pragma once
-//#ifndef MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
-//#define MODULES_TASK_2_GAVRYUSHOVA_v_GAUS_JORDAN_GAUS_JORDAN_H_
+#ifndef MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
+#define MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
 
 #define MAX_NUMBER 200
 #define MIN_NUMBER -100
@@ -29,4 +28,4 @@ class Matrix {
     std::vector<double> getParallelMetod(const std::vector<double>& coefVec);
 };
 
-//#endif  // MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
+#endif  //  MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
