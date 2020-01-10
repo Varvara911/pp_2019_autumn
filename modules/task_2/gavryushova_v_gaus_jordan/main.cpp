@@ -8,8 +8,8 @@
 TEST(gaus_jordan, calculate_matrix_correct_using_line_method) {
   int rank;
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  std::vector<std::vector<double>> vector{ {1, 1, 1}, {2, 3, 2}, {3, 5, 7} };
-  Matrix matrix(vector);
+  std::vector<std::vector<double>> vect{ {1, 1, 1}, {2, 3, 2}, {3, 5, 7} };
+  Matrix matrix(vect);
   std::vector<double> result(matrix.getMatrixSize());
   if (rank == 0) {
     result = matrix.getLineMetod({ 1, 1, 1 });
