@@ -1,4 +1,5 @@
 // Copyright 2019 Gavryushova Varvara
+#pragma once
 #ifndef MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
 #define MODULES_TASK_2_GAVRYUSHOVA_v_GAUS_JORDAN_GAUS_JORDAN_H_
 
