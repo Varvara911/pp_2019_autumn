@@ -71,6 +71,6 @@ int ParallelFind(std::vector<int> vec) {
       }
     }
   }
-  MPI_Reduce(&mpi_min, &minimum, 1, MPI_INT, MPI_MAX, 0, MPI_COMM_WORLD);
+  MPI_Reduce(&mpi_min, &minimum, 1, MPI_INT, MPI_MIN, 0, MPI_COMM_WORLD);
   return minimum;
 }
