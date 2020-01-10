@@ -1,7 +1,9 @@
 // Copyright 2019 Gavryushova Varvara
 
+#include <time.h>
 #include <gtest/gtest.h>
 #include <gtest-mpi-listener.hpp>
+#include <random>
 #include <vector>
 #include "./gaus_jordan.h"
 
