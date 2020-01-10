@@ -28,4 +28,4 @@ class Matrix {
     std::vector<double> getParallelMetod(const std::vector<double>& coefVec);
 };
 
-#endif  //  MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
+#endif  // MODULES_TASK_2_GAVRYUSHOVA_V_GAUS_JORDAN_GAUS_JORDAN_H_
