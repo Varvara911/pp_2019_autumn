@@ -1,4 +1,5 @@
 // Copyright 2019 Gavryushova Varvara
+
 #include <gtest/gtest.h>
 #include <gtest-mpi-listener.hpp>
 #include <vector>
